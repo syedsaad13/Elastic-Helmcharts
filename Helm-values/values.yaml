@@ -39,7 +39,6 @@ fleetServer:
   credentials:
     username: "elastic"
     password: "09sp6pVopzNCnjgv"
-
 service:
   # Set the service type for the Fleet Server to LoadBalancer for external access
   type: LoadBalancer
