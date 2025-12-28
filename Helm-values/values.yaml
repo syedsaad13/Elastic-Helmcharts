@@ -2,7 +2,7 @@ elasticsearch:
   # Enable X-Pack security
   xpack:
     security:
-      enabled: true
+      enabled: false
 
   nodeSets:
     - name: master
@@ -10,11 +10,11 @@ elasticsearch:
       config:
         node.roles: [master]
     - name: data
-      count: 2
+      count: 1
       config:
         node.roles: [data]
     - name: ingest
-      count: 2
+      count: 1
       config:
         node.roles: [ingest]
 
@@ -23,7 +23,7 @@ kibana:
   # Enable X-Pack security for Kibana
   xpack:
     security:
-      enabled: true
+      enabled: false
 
   service:
     type: LoadBalancer
