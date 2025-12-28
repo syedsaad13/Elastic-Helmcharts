@@ -1,0 +1,47 @@
+elasticsearch:
+  # Enable X-Pack security
+  xpack:
+    security:
+      enabled: true
+
+  nodeSets:
+    - name: master
+      count: 1
+      config:
+        node.roles: [master]
+    - name: data
+      count: 2
+      config:
+        node.roles: [data]
+    - name: ingest
+      count: 2
+      config:
+        node.roles: [ingest]
+
+kibana:
+  replicas: 2
+  # Enable X-Pack security for Kibana
+  xpack:
+    security:
+      enabled: true
+
+  service:
+    type: LoadBalancer
+
+fleetServer:
+  enabled: true
+  # Internal Kubernetes service name for internal communication
+  fleetServerHost: "fleet-server.elastic-system.svc.cluster.local"
+  # If external access is needed, replace the above with the external URL
+  # fleetServerHost: "https://fleet-server.your-domain.com"
+
+  # Credentials for Fleet Server, if needed
+  credentials:
+    username: "elastic"
+    password: "your-elastic-password"
+
+service:
+  # Set the service type for the Fleet Server to LoadBalancer for external access
+  type: LoadBalancer
+
+# You can add any additional configurations as needed.
