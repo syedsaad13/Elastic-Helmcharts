@@ -38,7 +38,7 @@ fleetServer:
   # Credentials for Fleet Server, if needed
   credentials:
     username: "elastic"
-    password: "your-elastic-password"
+    password: "09sp6pVopzNCnjgv"
 
 service:
   # Set the service type for the Fleet Server to LoadBalancer for external access
